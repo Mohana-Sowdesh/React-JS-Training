@@ -1,0 +1,28 @@
+.card-container {
+    margin-right: 10px;
+    width: 420px;
+    height: 240px;
+    background-color: #fbfcff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-container :hover {
+    border: 1px solid #dadfee;
+    box-shadow: 5px 10px #eff2fc;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.interests-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 60px;
+    overflow: scroll;
+}
