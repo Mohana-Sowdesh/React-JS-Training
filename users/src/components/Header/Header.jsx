@@ -4,7 +4,7 @@ import Searchbox from '../Searchbox/Searchbox';
 
 function Header() {
     const menuList = ['Reputation', 'New users', 'Voters', 'Editors', 'Moderators'];
-    const listItems = menuList.map(menu => <li>{menu}</li>);
+    const listItems = menuList.map(menu => <li key={menu}>{menu}</li>);
 
     return (
         <React.Fragment>
