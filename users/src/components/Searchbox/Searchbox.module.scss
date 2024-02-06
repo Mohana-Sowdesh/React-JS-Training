@@ -1,25 +1,25 @@
 .search-box {
-    width: 500px;
+    width: 450px;
     padding: 25px;
     display: flex;
     flex-direction: row;
+    gap: 10px;
     align-items: center;
     border: 2px solid #dfe3ef;
     border-radius: 5px;
 }
 
 .search-icon {
-    margin: 0 15px;
-    font-size: 10px;
-    color: rgb(92, 14, 14);
+    font-size: 25px;
+    color: #535766;
 }
 
 .search-input {
     width: 450px;
-    height: 12px;
+    height: 18px;
     border: none;
     outline: none;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
     color: #7c808c;
 }

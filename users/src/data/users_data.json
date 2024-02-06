@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "imgUrl": "https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/",
+        "imgUrl": "/images/user.jpg",
         "name": "Lelah Nichols",
         "place": "Troy, MI",
         "interests": ["clothes", "stem"]
     },
     {
         "id": 2,
-        "imgUrl": "https://www.pexels.com/photo/man-on-gray-shirt-portrait-91227/",
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
         "name": "Jesus Weiss",
         "place": "Fort Worth, TX",
         "interests": ["headset", "gadget", "speed", "winter"]
     },
     {
         "id": 3,
-        "imgUrl": "https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/",
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
         "name": "Annie Rice",
         "place": "Austin, TX",
         "interests": ["read", "mountain", "trip", "earth", "nature"]
     },
     {
         "id": 4,
-        "imgUrl": "https://www.pexels.com/photo/man-in-red-button-up-shirt-smiling-3777946/",
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
         "name": "Robert Brower",
         "place": "Cincinnati, OH",
         "interests": ["maintenance", "gears", "frames", "repair"]
     },
     {
         "id": 5,
-        "imgUrl": "https://www.pexels.com/photo/closeup-photo-of-smiling-woman-wearing-blue-denim-jacket-1130626/",
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
         "name": "Amy Campbell",
         "place": "Warrior, AL",
         "interests": ["music", "disks"]
     },
     {
         "id": 6,
-        "imgUrl": "https://www.pexels.com/photo/portrait-photo-of-smiling-man-with-his-arms-crossed-standing-in-front-of-white-wall-2379004/",
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
         "name": "Anthony S. Morin",
         "place": "Lyndhurst, NJ",
         "interests": ["vintage", "electric"]
