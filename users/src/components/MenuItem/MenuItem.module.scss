@@ -1,0 +1,16 @@
+li {
+    letter-spacing: -0.5px;
+    padding: 15px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 18px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    color: #6e717e;
+}
+
+li:hover {
+    background-color: #88a0f8;
+    color: white;
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "imgUrl": "/images/user.jpg",
+        "name": "Lelah Nichols",
+        "place": "Troy, MI",
+        "interests": ["clothes", "stem"]
+    },
+    {
+        "id": 2,
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
+        "name": "Jesus Weiss",
+        "place": "Fort Worth, TX",
+        "interests": ["headset", "gadget", "speed", "winter"]
+    },
+    {
+        "id": 3,
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
+        "name": "Annie Rice",
+        "place": "Austin, TX",
+        "interests": ["read", "mountain", "trip", "earth", "nature"]
+    },
+    {
+        "id": 4,
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
+        "name": "Robert Brower",
+        "place": "Cincinnati, OH",
+        "interests": ["maintenance", "gears", "frames", "repair"]
+    },
+    {
+        "id": 5,
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
+        "name": "Amy Campbell",
+        "place": "Warrior, AL",
+        "interests": ["music", "disks"]
+    },
+    {
+        "id": 6,
+        "imgUrl": "/Users/mohanasowdesh/Documents/GitHub/React-JS-Training/users/src/assets/user.jpg",
+        "name": "Anthony S. Morin",
+        "place": "Lyndhurst, NJ",
+        "interests": ["vintage", "electric"]
+    }
+]
