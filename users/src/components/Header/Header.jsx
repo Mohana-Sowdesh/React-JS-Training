@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from '../Header/Header.module.scss';
 import Searchbox from '../Searchbox/Searchbox';
+import MenuItem from '../MenuItem/MenuItem';
 
 function Header() {
     const menuList = ['Reputation', 'New users', 'Voters', 'Editors', 'Moderators'];
-    const listItems = menuList.map(menu => <li key={menu}>{menu}</li>);
+    const listItems = menuList.map(menu => <MenuItem key={menu} menu={menu}/>);
 
     return (
         <React.Fragment>
