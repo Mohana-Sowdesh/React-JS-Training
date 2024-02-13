@@ -1,0 +1,8 @@
+@import '../../styles/color.module';
+
+.menuItem {
+    color: $primary-color;
+    font-size: 1.15rem;
+    font-weight: 500;
+    cursor: pointer;
+}
