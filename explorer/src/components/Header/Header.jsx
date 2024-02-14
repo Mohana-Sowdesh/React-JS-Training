@@ -5,7 +5,7 @@ import MenuItem from '../MenuItem/MenuItem';
 import { AppConstants } from '../../constants/app-constants';
 
 /**
- * @description this function returns Header component
+ * @description - This function returns Header component
  */
 
 function Header() {
