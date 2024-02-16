@@ -1,0 +1,30 @@
+@import '../../styles/color.module';
+
+.dropdown {
+    padding: 0.625rem 1.875rem;
+    width: 43.75rem;
+    height: 4.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $dropdown-txt-xolor;
+    border: 2px solid $border-color;
+}
+
+select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-wrapper::after {
+    content: '▼';
+    position: absolute;
+    font-size: 0.75rem;
+    top: 30px;
+    right: -70px;
+    position: absolute;
+}

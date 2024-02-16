@@ -1,0 +1,29 @@
+@import '../../styles/color.module';
+
+.tourist-card-container {
+    width: 30rem;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .tourist-card-heading {
+        margin-top: 1rem;
+        font-size: 2.18rem;
+        color: $card-heading-color;
+        font-weight: 300;
+    }
+
+    .tourist-card-subheading{
+        margin-top: 0.75rem;
+        margin-bottom: 1.875rem;
+        font-size: 1.25rem;
+    }
+
+    .tourist-card-content{
+        margin-bottom: 1.25rem;
+        font-size: 1.18rem;
+        color: $card-content-color;
+    }
+}

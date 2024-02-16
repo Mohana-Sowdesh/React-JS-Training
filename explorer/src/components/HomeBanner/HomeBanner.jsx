@@ -2,6 +2,7 @@ import styles from "../HomeBanner/HomeBanner.module.scss";
 import cover from '../../assets/explorer.webp';
 import { AppConstants } from '../../constants/app-constants';
 import Button from "../Button/Button";
+import Dropdown from "../Dropdown/Dropdown";
 
 /**
  * @description - This function returns Banner component
@@ -15,17 +16,7 @@ function Banner() {
                     { AppConstants.BANNER.PROMO_MSG }
                     <span className={styles.south}>{ AppConstants.BANNER.SOUTH }</span>
                 </div>
-                
-                <select name="place" className={styles.dropdown}>
-                    <option value="Choose" hidden selected disabled>Choose</option>
-                    <option value="Chidambaram">Chidambaram</option>
-                    <option value="Masinagudi">Masinagudi</option>
-                    <option value="Pollachi">Pollachi</option>
-                    <option value="Thanjavur">Thanjavur</option>
-                    <option value="Kumbakkonam">Kumbakkonam</option>
-                    <option value="Tirunelveli">Tirunelveli</option>
-                </select>
-
+                <Dropdown />
                 <div className={styles["btn-container"]}>
                     <Button btnText={AppConstants.BANNER.EXPLORE_BTN_TXT} />
                 </div>

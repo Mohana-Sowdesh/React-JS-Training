@@ -1,0 +1,31 @@
+@import '../../styles/color.module';
+
+.destinations-container {
+    margin: 6.25rem 6.875rem 1.25rem 6.875rem;
+}
+
+.destinations-container {
+    h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $destinations-heading-color;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $destinations-description-color;
+    }
+
+    .tourist-cards-container {
+        margin-top: 3.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        row-gap: 5.31rem;
+        column-gap: 1.875rem;
+    }
+}
+
