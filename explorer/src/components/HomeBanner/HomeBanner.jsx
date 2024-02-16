@@ -1,4 +1,4 @@
-import styles from "../Banner/Banner.module.scss";
+import styles from "../HomeBanner/HomeBanner.module.scss";
 import cover from '../../assets/explorer.webp';
 import { AppConstants } from '../../constants/app-constants';
 import Button from "../Button/Button";

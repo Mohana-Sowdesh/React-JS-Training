@@ -42,10 +42,27 @@
 }
 
 .dropdown {
-    padding: 10px;
+    padding: 10px 30px;
     width: 710px;
     height: 72px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $dropdown-txt-xolor;
+    border: 2px solid $border-color;
 }
+
+select::-ms-expand {
+    display: none;
+}
+
+select::after {
+    content: "Hello";
+    background-image: url("../../assets/dropdown-image.png");
+    background-position: right center; /* Adjust as needed */
+    background-repeat: no-repeat;
+    /* Additional styles for positioning and sizing */
+    pointer-events: none; /* Ensure clicks go through to the select */
+  }
 
 .btn-container {
     margin-top: 1.5rem;
