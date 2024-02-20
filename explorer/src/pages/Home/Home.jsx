@@ -1,15 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import Banner from '../../components/HomeBanner/HomeBanner';
 import Destinations from '../../containers/Destinations/Destinations';
+import ContactUsForm from '../../containers/ContactUsForm/ContactUsForm';
+import HomeBanner from '../../containers/HomeBanner/HomeBanner';
 
 
 function Home() {
     return (
        <div>
             <Header />
-            <Banner />
+            <HomeBanner />
             <Destinations />
+            <ContactUsForm />
        </div>
     );
 }

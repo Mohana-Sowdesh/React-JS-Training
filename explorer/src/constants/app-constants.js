@@ -12,6 +12,19 @@ export const AppConstants = {
         DESTINATIONS: "Destinations",
         SLOGAN: "Just for you. Because you and your bike are special to us!",
         READ_MORE_BTN_TXT: "Read more"
-    }
+    },
+
+    CONTACT_US_FORM: {
+        CONTACT_US_HEADING: "Contact Us",
+        CONTACT_US_DESCRIPTION: "Our Sales Team will reach out to you ASAP!",
+        LABEL_NAME: "Name",
+        LABEL_HOME_TOWN: "Your Home Town",
+        LABEL_DESTINATION_PREFERENCE: "Where would you like to go?",
+        LABEL_CONTACT_NO: "Contact Number",
+        SUBMIT_BTN_TEXT: "Submit Interest",
+        SUBMIT_MSG: "Thank You `${userName}` for expressing your interest in travelling with us. Our Sales team will get back with the best packages from `${source}` to `${destination}`"
+    },
+
+    PLACES_DROPDOWN_VALUES: ['Chidambaram', 'Masinagudi', 'Pollachi', 'Thanjavur', 'Kumbakonam', 'Tirunelveli'],
 }
 

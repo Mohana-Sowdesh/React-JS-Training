@@ -1,13 +1,13 @@
 import styles from "../HomeBanner/HomeBanner.module.scss";
 import cover from '../../assets/explorer.webp';
 import { AppConstants } from '../../constants/app-constants';
-import Button from "../Button/Button";
-import Dropdown from "../Dropdown/Dropdown";
+import Button from "../../components/Button/Button";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 /**
  * @description - This function returns Banner component
  */
-function Banner() {
+function HomeBanner() {
     return (
         <section className={styles.banner}>
             <div className={styles["site-desc"]}>
@@ -16,7 +16,7 @@ function Banner() {
                     { AppConstants.BANNER.PROMO_MSG }
                     <span className={styles.south}>{ AppConstants.BANNER.SOUTH }</span>
                 </div>
-                <Dropdown />
+                <Dropdown dropDownValues={ AppConstants.PLACES_DROPDOWN_VALUES }/>
                 <div className={styles["btn-container"]}>
                     <Button btnText={AppConstants.BANNER.EXPLORE_BTN_TXT} />
                 </div>
@@ -29,4 +29,4 @@ function Banner() {
     );
 }
 
-export default Banner;
+export default HomeBanner;

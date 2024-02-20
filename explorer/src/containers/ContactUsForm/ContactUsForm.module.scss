@@ -1,0 +1,46 @@
+@import '../../styles/color.module';
+
+.contact-us-section {
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+    background-color: $contact-us-form-bg-color;
+
+    .contact-us-form-container {
+        padding: 5.625rem 31.875rem 2rem 31.875rem;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: $destinations-heading-color;
+        }
+    
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: $destinations-description-color;
+        }
+    
+        .form-container {
+    
+            .btn-container {
+                margin-top: 1.5rem;
+            }
+        }
+    }  
+
+    .submit-msg {
+        width: 900px;
+        margin: 0 400px;
+        padding: 20px 30px;
+        background-color: $btn-color;
+        color: $white-color;
+        font-size: 21px;
+        font-weight: 300;
+        line-height: 1.5;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}
