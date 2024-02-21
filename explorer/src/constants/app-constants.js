@@ -1,3 +1,10 @@
+import pollachiImg from '../assets/pollachi.png';
+import thanjavurImg from '../assets/thanjavur.png';
+import chidambaramImg from '../assets/chidambaram.png';
+import masinagudiImg from '../assets/masangudi.png';
+import kumbakonamImg from  '../assets/kumbakonam.png';
+import tirunelveliImg from '../assets/tirunelveli.png';
+
 export const AppConstants = {
     MENU_LIST : ['Hotels', 'Bike Rentals', 'Restaurants'],
     
@@ -26,5 +33,13 @@ export const AppConstants = {
     },
 
     PLACES_DROPDOWN_VALUES: ['Chidambaram', 'Masinagudi', 'Pollachi', 'Thanjavur', 'Kumbakonam', 'Tirunelveli'],
+
+    API_URLS: {
+        ALL_PLACES_URL: 'https://nijin-server.vercel.app/api/explorer',
+        SPECIFIC_PLACE_URL: 'https://nijin-server.vercel.app/api/explorer/places/',
+        SIMILAR_PLACES_URL: 'http://nijin-server.vercel.app/api/explorer/places/related/'
+    },
+
+    DESTINATION_IMG_URL: [pollachiImg, thanjavurImg, chidambaramImg, masinagudiImg, kumbakonamImg, tirunelveliImg ]
 }
 

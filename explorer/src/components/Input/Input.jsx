@@ -1,25 +1,26 @@
 import PropTypes from 'prop-types';
 import styles from '../Input/Input.module.scss';
 
-function Input({ labelName, inputType }) {
+function Input({ labelName, inputType, onChange }) {
     if(labelName) {
         return (
             <div className={ styles['input-wrapper']}>
                 <label for={ labelName }>{ labelName }</label>
-                <input type={ inputType } id={ labelName } name={ labelName } />
+                <input type={ inputType } id={ labelName } name={ labelName } onChange={ onChange } />
             </div>
         );
     }
     return (
         <div>
-            <input type={ inputType } id={ labelName } name={ labelName } />
+            <input type={ inputType } id={ labelName } name={ labelName } onChange={ onChange }/>
         </div>
     );    
 }
 
 Input.propTypes = {
     labelName: PropTypes.string,
-    inputType: PropTypes.string.isRequired
+    inputType: PropTypes.string.isRequired,
+    onChange: PropTypes.func
 }
 
 export default Input;

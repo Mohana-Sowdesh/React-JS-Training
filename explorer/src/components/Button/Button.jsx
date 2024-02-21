@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
  * @description - This function returns a button
  * @param {*} btnText 
  */
-function Button({ btnText }) {
+function Button({ btnText, onClick }) {
     return (
-        <button className={styles.btn}>{ btnText }</button>
+        <button className={styles.btn} onClick={ onClick }>{ btnText }</button>
     );
 }
 
 Button.propTypes = {
-    btnText: PropTypes.string.isRequired
+    btnText: PropTypes.string.isRequired,
+    onClick: PropTypes.func
 }
 
 export default Button;
