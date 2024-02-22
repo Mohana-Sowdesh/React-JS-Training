@@ -1,21 +1,17 @@
 @import '../../styles/color.module';
+@import '../../styles/mixin.module';
 
 .destinations-container {
     margin: 6.25rem 6.875rem 1.25rem 6.875rem;
 }
 
 .destinations-container {
-    h1 {
-        font-size: 3rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-        color: $destinations-heading-color;
+    .heading {
+        @include heading;
     }
 
-    h3 {
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: $destinations-description-color;
+    .heading-desc {
+        @include heading-desc;
     }
 
     .tourist-cards-container {

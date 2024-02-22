@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
  * @description - Function to render a tourist card component
  * @returns 
  */
-function Card({imageUrl, placeData }) {
+function TouristCard({imageUrl, placeData }) {
     return (
         <div className={styles["tourist-card-container"]}>
             <img src={ imageUrl } alt="Destination img" />
@@ -20,9 +20,9 @@ function Card({imageUrl, placeData }) {
     );
 }
 
-Card.propTypes = {
+TouristCard.propTypes = {
     imageUrl: PropTypes.string.isRequired,
     placeData: PropTypes.object.isRequired
 }
 
-export default Card;
+export default TouristCard;

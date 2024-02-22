@@ -1,0 +1,24 @@
+@import '../../styles/mixin.module';
+
+.similar-destinations-container {
+    margin: 6.875rem 7.5rem 0 7.5rem;
+
+    .heading {
+        @include heading;
+    }
+
+    .heading-desc {
+        @include heading-desc;
+
+        span {
+            text-transform: capitalize;
+        }
+    }
+
+    .cards-container {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

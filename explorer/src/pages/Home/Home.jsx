@@ -12,7 +12,6 @@ function Home() {
     useEffect(() => {
         getDestinationData().then((data) => {
             setPlacesData(data);
-            console.log(placesData)
         });
     }, []);
 

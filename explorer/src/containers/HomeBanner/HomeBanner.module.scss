@@ -1,22 +1,21 @@
 @import '../../styles/color.module';
+@import '../../styles/mixin.module';
 
 .banner {
     display: flex;
 }
 
 .site-desc {
-    width: 37.5rem;
     margin: 10.25rem 0 0 9.25rem;
+    width: 37.5rem;
     z-index: 1;
 }
 
-.banner-img {
+.banner-img-container {
     width: 100%;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    .banner-img {
+        @include banner-img;
     }
 }
 

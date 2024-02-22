@@ -40,6 +40,20 @@ export const AppConstants = {
         SIMILAR_PLACES_URL: 'http://nijin-server.vercel.app/api/explorer/places/related/'
     },
 
-    DESTINATION_IMG_URL: [pollachiImg, thanjavurImg, chidambaramImg, masinagudiImg, kumbakonamImg, tirunelveliImg ]
+    DESTINATION_IMG_URL: [pollachiImg, thanjavurImg, chidambaramImg, masinagudiImg, kumbakonamImg, tirunelveliImg ],
+
+    SIMILAR_DESTINATIONS: {
+        SIMILAR_DESTINATIONS_TXT: 'Similar Destinations',
+        SIMILAR_DESTINATIONS_DESC: 'Because you liked '
+    },
+
+    PLACES_IMG: {
+        'pollachi': pollachiImg,
+        'thanjavur': thanjavurImg,
+        'chidambaram': chidambaramImg,
+        'masinagudi': masinagudiImg,
+        'kumbakonam': kumbakonamImg,
+        'tirunelveli': tirunelveliImg
+    }
 }
 

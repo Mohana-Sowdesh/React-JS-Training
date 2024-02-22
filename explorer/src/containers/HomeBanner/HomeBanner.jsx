@@ -22,8 +22,8 @@ function HomeBanner() {
                 </div>
                 
             </div>
-            <div className={styles["banner-img"]}>
-                <img src={cover} alt="cover image" />
+            <div className={styles["banner-img-container"]}>
+                <img src={cover} alt="cover image" className={styles["banner-img"]} />
             </div>
         </section>
     );
