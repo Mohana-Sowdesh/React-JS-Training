@@ -54,6 +54,8 @@ export const AppConstants = {
         'masinagudi': masinagudiImg,
         'kumbakonam': kumbakonamImg,
         'tirunelveli': tirunelveliImg
-    }
+    },
+
+    ERROR_MSG: "Uh-oh! Some error occurred..."
 }
 

@@ -2,7 +2,7 @@ import styles from '../Dropdown/Dropdown.module.scss';
 import PropTypes from 'prop-types';
 
 /**
- * @description - Function to render a dropdown component
+ * @description Function to render a dropdown component
  * @returns 
  */
 function Dropdown({ labelName, dropDownValues, onChange, disable }) {

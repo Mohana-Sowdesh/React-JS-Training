@@ -2,40 +2,24 @@ import TouristCard from '../../components/TouristCard/TouristCard';
 import styles from '../SimilarDestinations/SimilarDestinations.module.scss';
 import { AppConstants } from '../../constants/app-constants';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-import { getSpecificDestinationData } from '../../services/DestinationsData';
+import ErrorMsg from '../../components/ErrorMsg/ErrorMsg';
 
-function SimilarDestinations({ selectedDestination, relatedPlaces }) {
-    const [relatedPlacesData, setRelatedPlaceData] = useState([{ imgUrl: '', data: {}}]);
-    const placesArray = AppConstants.PLACES_IMG;
-    console.log("relatedPlaces", relatedPlaces);
+/**
+ * @description Container that holds similar destination cards 
+ * @param {*} selectedDestination 
+ * @param {*} relatedPlacesData
+ * @returns 
+ */
+function SimilarDestinations({ selectedDestination, relatedPlacesData }) {
+    let similarPlaces;
 
-   useEffect(() => {
-        let relatedPlacesDetails = [];
-        // console.log("relatedPlaces", relatedPlaces);
+    if(relatedPlacesData.length > 0) {
+        similarPlaces = relatedPlacesData?.map((place) => <TouristCard imageUrl={place.imgUrl} placeData={place.data} /> );
+    }
+    else {
+        similarPlaces = <ErrorMsg />
+    }
 
-        relatedPlacesDetails = relatedPlaces.map((place) => {
-            let imgUrl, relatedPlaceData;
-            for (const key in placesArray) {
-                if (key === place) {
-                  imgUrl = placesArray[key];
-                  break; 
-                }
-            }
-
-            getSpecificDestinationData(place).then((data) => {
-                console.log("relaredplacedata", data);
-                relatedPlaceData = data;
-            });
-
-            const placeDetail = {"imgUrl": imgUrl, "data": relatedPlaceData }
-            relatedPlacesDetails.push(placeDetail);
-            return relatedPlacesDetails;
-        })
-        setRelatedPlaceData(relatedPlacesDetails);
-    }, [placesArray, relatedPlaces]); 
-  
-    const similarPlaces = relatedPlacesData.map((place) => <TouristCard imageUrl={place.imgUrl} placeData={place.data} /> )
     return (
         <div className={styles['similar-destinations-container']}>
             <div className={styles['heading']}>{ AppConstants.SIMILAR_DESTINATIONS.SIMILAR_DESTINATIONS_TXT }</div>
@@ -48,8 +32,8 @@ function SimilarDestinations({ selectedDestination, relatedPlaces }) {
 }
 
 SimilarDestinations.propTypes = {
-    selectedDestination: PropTypes.string.isRequired,
-    relatedPlaces: PropTypes.array.isRequired
+    selectedDestination: PropTypes.string,
+    relatedPlacesData: PropTypes.array
 }
 
 export default SimilarDestinations;

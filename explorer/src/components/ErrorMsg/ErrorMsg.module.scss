@@ -1,0 +1,8 @@
+@import '../../styles//color.module';
+
+.error-msg {
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: $border-color;
+}

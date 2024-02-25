@@ -3,8 +3,9 @@ import styles from '../MenuItem/MenuItem.module.scss';
 import PropTypes from 'prop-types';
 
 /**
- * @description - This function returns single item in menu
- * @param - menuItem text
+ * @description This function returns single item in menu
+ * @param {*} menuItem
+ * @returns 
  */
 
 function MenuItem({ menuItem }) {

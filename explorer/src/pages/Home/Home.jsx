@@ -6,6 +6,10 @@ import HomeBanner from '../../containers/HomeBanner/HomeBanner';
 import { useState, useEffect } from 'react';
 import  { getDestinationData } from '../../services/DestinationsData';
 
+/**
+ * @description Home page of Explorer
+ * @returns 
+ */
 function Home() {
     const [placesData, setPlacesData] = useState([]);
 

@@ -15,3 +15,8 @@ export const getSpecificDestinationData = async (destination) => {
     return destinationData.data;
 }
 
+export const getWeatherApiData = async (destination) => {
+    const weatherData = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${destination}&appid=89c33f3704d1b01a0ef1db831f428d04&units=metric`).catch(errorHandler);
+    return weatherData;
+}
+

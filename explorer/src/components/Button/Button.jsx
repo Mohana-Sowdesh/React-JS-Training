@@ -2,8 +2,9 @@ import styles from '../Button/Button.module.scss';
 import PropTypes from 'prop-types';
 
 /**
- * @description - This function returns a button
+ * @description This function returns a button
  * @param {*} btnText 
+ * @returns 
  */
 function Button({ btnText, onClick }) {
     return (

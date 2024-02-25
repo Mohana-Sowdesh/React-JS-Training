@@ -5,6 +5,10 @@ import { AppConstants } from '../../constants/app-constants';
 import styles from '../ContactUsForm/ContactUsForm.module.scss';
 import React, { useState } from 'react';
 
+/**
+ * @description Contact us form component
+ * @returns 
+ */
 function ContactUsForm() {
     const [userName, setNameInputValue] = useState('');
     const [source, setSourceSelectValue] = useState('');

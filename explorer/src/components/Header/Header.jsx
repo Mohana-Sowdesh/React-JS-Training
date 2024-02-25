@@ -6,7 +6,8 @@ import { AppConstants } from '../../constants/app-constants';
 import { useNavigate } from 'react-router-dom';
 
 /**
- * @description - This function returns Header component
+ * @description This function returns Header component
+ * @returns 
  */
 
 function Header() {

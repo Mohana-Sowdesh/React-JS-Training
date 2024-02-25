@@ -2,7 +2,13 @@ import styles from '../Destinations/Destinations.module.scss';
 import { AppConstants } from '../../constants/app-constants';
 import TouristCard from '../../components/TouristCard/TouristCard';
 import PropTypes from 'prop-types';
+import ErrorMsg from '../../components/ErrorMsg/ErrorMsg';
 
+/**
+ * @description Container that holds all the destination cards
+ * @param {*} placesData 
+ * @returns 
+ */
 function Destinations({placesData}) {
     let destinationCards;
 
@@ -10,6 +16,9 @@ function Destinations({placesData}) {
         destinationCards = placesData.map((place,index) => {
             return <TouristCard imageUrl={AppConstants.DESTINATION_IMG_URL[index]} placeData={place}/>
         });
+    }
+    else {
+        destinationCards = <ErrorMsg />
     }
 
     return (

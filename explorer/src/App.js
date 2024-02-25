@@ -5,10 +5,10 @@ import SpecificDestination from './pages/SpecificDestination/SpecificDestination
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/place/:destination" element={<SpecificDestination />}></Route>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/place/:destination" element={<SpecificDestination />}></Route>
+      </Routes>
   );
 }
 
