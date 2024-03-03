@@ -29,7 +29,9 @@ export const AppConstants = {
         LABEL_DESTINATION_PREFERENCE: "Where would you like to go?",
         LABEL_CONTACT_NO: "Contact Number",
         SUBMIT_BTN_TEXT: "Submit Interest",
-        SUBMIT_MSG: "Thank You `${userName}` for expressing your interest in travelling with us. Our Sales team will get back with the best packages from `${source}` to `${destination}`"
+        SUBMIT_MSG: "Thank You `${userName}` for expressing your interest in travelling with us. Our Sales team will get back with the best packages from `${source}` to `${destination}`",
+        FIELD_REQUIRED_MSG: "This field is required",
+        INVALID_FIELD_MSG: "This field is invalid"
     },
 
     PLACES_DROPDOWN_VALUES: ['Chidambaram', 'Masinagudi', 'Pollachi', 'Thanjavur', 'Kumbakonam', 'Tirunelveli'],

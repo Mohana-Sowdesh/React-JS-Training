@@ -26,6 +26,12 @@
             .btn-container {
                 margin-top: 1.5rem;
             }
+            
+            .err-msg {
+                margin-top: 0.3125rem;
+                font-size: 0.75rem;
+                color: $err-msg;
+            }
         }
     }  
 

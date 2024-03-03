@@ -7,11 +7,15 @@ import PropTypes from 'prop-types';
  * @returns 
  */
 function DestinationDescription({ description}) {
+    let descElement;
+    if(description) {
+        const desc = description.split("\\n");
+        descElement = desc.map(desc => <div>{ desc }</div>);
+    }
+
     return (
         <div className={styles['full-description-container']}>
-            <div>{ description }</div>
-            <div>{ description }</div>
-            <div>{ description }</div>
+            {descElement}
         </div>
     );
 }
