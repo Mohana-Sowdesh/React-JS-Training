@@ -43,15 +43,15 @@ function ContactUsForm() {
     }
 
     const onFormSubmission = () => {
-        if(userName!=='' && source!=='' && destination!=='' && contactNo!=='') {
-            setFormFieldsValidation(true);
-        }
-        else if(userName==='' || source==='' || destination==='' || contactNo==='' || ((/^[a-zA-Z ]+$/g).test(userName)===false) || ((/^\d{10}$/).test(contactNo)===false)) {
+        if(userName==='' || source==='' || destination==='' || contactNo==='' || ((/^[a-zA-Z ]+$/g).test(userName)===false) || ((/^\d{10}$/).test(contactNo)===false)) {
             setIsTouched({ username: true, source: true, destination: true, contactNo: true })
             setFormFieldsValidation(false);
+            setFormSubmittedValue(false);
         }
-        setFormSubmittedValue(true);
-
+        else {
+            setFormFieldsValidation(true);
+            setFormSubmittedValue(true);
+        }
     }
 
     const handleSubmission = (event) => {
@@ -66,7 +66,7 @@ function ContactUsForm() {
 
                 <form className={ styles['form-container']} onSubmit={ handleSubmission } method="post">
                     <div>
-                        <Input labelName={ AppConstants.CONTACT_US_FORM.LABEL_NAME } inputType='text' onChange={ handleNameChange }/>
+                        <Input labelName={ AppConstants.CONTACT_US_FORM.LABEL_NAME } inputType='text' onChange={ handleNameChange } />
                         { ( isTouched["username"] && userName==='') 
                             ? <div className={styles["err-msg"]}>{AppConstants.CONTACT_US_FORM.FIELD_REQUIRED_MSG}</div>
                             : ( isTouched["username"] && ((/^[a-zA-Z ]+$/g).test(userName.trim())===false)
@@ -84,7 +84,7 @@ function ContactUsForm() {
                             : <div className={styles["err-msg"]}></div> }
                     </div>
                     <div>
-                        <Input labelName={ AppConstants.CONTACT_US_FORM.LABEL_CONTACT_NO } inputType='number'  onChange={ handleContactNoChange } />
+                        <Input labelName={ AppConstants.CONTACT_US_FORM.LABEL_CONTACT_NO } inputType='number'  onChange={ handleContactNoChange }/>
                         { ( isTouched["contactNo"] && contactNo==='') 
                             ?  <div className={styles["err-msg"]}>{AppConstants.CONTACT_US_FORM.FIELD_REQUIRED_MSG}</div>   
                             :  (( isTouched["contactNo"] && (/^\d{10}$/).test(contactNo)===false)
