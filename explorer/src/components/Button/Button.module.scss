@@ -1,6 +1,7 @@
 @import '../../styles/color.module';
 
 .btn {
+    font-family: "IBM Plex Sans", sans-serif;
     padding: 0.75rem 2rem;
     background-color: $btn-color;
     color: $white-color;
@@ -9,5 +10,4 @@
     font-weight: 500;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
