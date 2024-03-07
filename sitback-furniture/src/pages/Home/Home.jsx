@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
+import Categories from '../../containers/Categories/Categories';
 
 /**
  * @description Home page of Sitback furniture
@@ -7,7 +8,10 @@ import Header from '../../components/Header/Header';
  */
 function Home() {
     return (
-        <Header />
+        <>
+            <Header />
+            <Categories />
+        </>
     );
 }
 

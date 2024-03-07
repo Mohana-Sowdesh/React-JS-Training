@@ -1,0 +1,25 @@
+import styles from '../Categories/Categories.module.scss';
+import { AppConstants } from '../../constants/app-constants';
+import CategoryCard from '../../components/CategoryCard/CategoryCard';
+
+/**
+ * @description This function returns categories container with all furniture categories cards
+ * @returns 
+ */
+function Categories() {
+    const categories = AppConstants.HOME_PAGE.CATEGORIES_DETAILS.map(category => <CategoryCard category={ category } />);
+    return (
+        <>
+            <div className={styles['categories-container']}>
+                <div className={styles['headline']}>{ AppConstants.HOME_PAGE.TAGLINE }</div>
+                <div className={styles['sub-headline']}>{ AppConstants.HOME_PAGE.CATCH_PHRASE }</div>
+                <div className={styles['category-cards-container']}>
+                    { categories }
+                </div>
+            </div>
+            <footer className={styles.footer}>{ AppConstants.HOME_PAGE.COPYRIGHTS_TXT } { new Date().getFullYear() }</footer>
+        </>
+    );
+}
+
+export default Categories;

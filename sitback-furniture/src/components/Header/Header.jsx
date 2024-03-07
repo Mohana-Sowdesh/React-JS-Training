@@ -9,16 +9,16 @@ import MenuItem from '../MenuItem/MenuItem';
  * @returns 
  */
 function Header() {
-    const menuList = AppConstants.MENU_LIST.map((menu, index) => <MenuItem key={index} menuItem={menu} />);
+    const menuList = AppConstants.HEADER.MENU_LIST.map((menu, index) => <MenuItem key={index} menuItem={menu} />);
 
     return (
         <header className={styles['header-container']}>
-            <div className={styles.logo}>{ AppConstants.LOGO }</div>
+            <div className={styles.logo}>{ AppConstants.HEADER.LOGO }</div>
             <ul className={styles['menu-container']}>
                 { menuList }
             </ul>
             <div className={styles['profile-container']}>
-                <div className={styles['user-name']}>{ AppConstants.USERNAME }</div>
+                <div className={styles['user-name']}>{ AppConstants.HEADER.USERNAME }</div>
                 <FontAwesomeIcon icon={faCaretDown} className={styles['dropdown-icon']} />
             </div>
         </header>

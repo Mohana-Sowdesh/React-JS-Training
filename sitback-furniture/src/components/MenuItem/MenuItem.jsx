@@ -4,7 +4,7 @@ import styles from '../MenuItem/MenuItem.module.scss';
 
 /**
  * @description This function returns single item in menu
- * @param {*} menuItem
+ * @param {*} menuItem - string
  * @returns 
  */
 function MenuItem({ menuItem }) {
