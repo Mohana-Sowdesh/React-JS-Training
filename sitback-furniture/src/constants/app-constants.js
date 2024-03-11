@@ -5,7 +5,20 @@ import diningImg from "../assets/dining.png";
 export const AppConstants = {
   HEADER: {
     LOGO: "SITBACK",
-    MENU_LIST: ["Couches", "Chairs", "Dining"],
+    MENU_LIST: [ 
+      {
+        name: "Couches",
+        path: "/products/couches"
+      },
+      { 
+        name: "Chairs",
+        path: "/products/chairs"
+      }, 
+      {
+        name: "Dining",
+        path: "/products/dining"
+      }
+    ],
     USERNAME: "Nijin Vinodan",
   },
   HOME_PAGE: {
@@ -20,7 +33,7 @@ export const AppConstants = {
       {
         imageUrl: chairsImg,
         categoryName: "Chairs",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
       },
       {
         imageUrl: diningImg,
@@ -30,5 +43,9 @@ export const AppConstants = {
     ],
     SHOP_NOW_BTN_TXT: 'Shop Now',
     COPYRIGHTS_TXT: 'COPYRIGHTS',
+  },
+  PRODUCT_CARD: {
+    ADD_TO_CART: 'ADD TO CART',
+    ADD_TO_WISHLIST: 'ADD TO WISHLIST'
   }
 };

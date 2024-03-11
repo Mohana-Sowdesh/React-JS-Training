@@ -7,7 +7,7 @@ import CategoryCard from '../../components/CategoryCard/CategoryCard';
  * @returns 
  */
 function Categories() {
-    const categories = AppConstants.HOME_PAGE.CATEGORIES_DETAILS.map(category => <CategoryCard category={ category } />);
+    const categories = AppConstants.HOME_PAGE.CATEGORIES_DETAILS.map((category, index) => <CategoryCard key={index} category={ category } />);
     return (
         <>
             <div className={styles['categories-container']}>

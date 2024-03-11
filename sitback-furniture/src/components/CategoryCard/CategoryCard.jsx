@@ -2,6 +2,7 @@ import styles from '../CategoryCard/CategoryCard.module.scss';
 import { AppConstants } from '../../constants/app-constants';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * @description This function returns single furniture category card component
@@ -9,6 +10,11 @@ import Button from '../Button/Button';
  * @returns 
  */
 function CategoryCard({ category }) {
+  const navigate = useNavigate();
+  const navigateToCategoryPage = () => {
+    navigate(`/products/${ category.categoryName.toLowerCase() }`)
+  }
+
   return (
     <div className={styles['category-card-container']}>
       <div className={styles['img-container']}>
@@ -16,7 +22,7 @@ function CategoryCard({ category }) {
       </div>
       <div className={styles['category-name']}>{ category.categoryName }</div>
       <div className={styles['category-description']}>{ category.description }</div>
-      <Button btnText={ AppConstants.HOME_PAGE.SHOP_NOW_BTN_TXT } />
+      <Button btnText={ AppConstants.HOME_PAGE.SHOP_NOW_BTN_TXT } onClick={ navigateToCategoryPage } />
     </div>
   );
 }
