@@ -1,0 +1,57 @@
+@import '../../styles/color.module';
+
+.cart-container {
+    // display: none;
+    min-width: 25.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    background-color: $cart-bg-color;
+
+    .cart-header-container {
+        margin: 2.8125rem 2.5rem 1.875rem;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        gap: 2.25rem;
+        color: $cart-header-font-color;
+
+        .cart-menu-item {
+            padding-bottom: 0.1875rem;
+            cursor: pointer;
+        }
+
+        .active {
+            color: $black;
+            font-weight: 600;
+            border-bottom: 0.15rem solid $black;
+        }
+    }
+
+    .cart-main-stage-container {
+        margin: 0 2.5rem 0.625rem;
+        flex-grow: 1;
+        overflow-y: scroll;
+    }
+
+    .cart-value-container {
+        margin-left: 0.3125rem;
+        padding: 1.875rem 1.875rem 3.4375rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $white;
+
+        .total-amt-txt {
+            font-size: 0.75rem;
+        }
+
+        .cart-value {
+            font-weight: 500;
+        }
+    }
+}

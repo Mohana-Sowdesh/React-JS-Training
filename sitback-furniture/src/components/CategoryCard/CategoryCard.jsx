@@ -6,21 +6,21 @@ import { useNavigate } from 'react-router-dom';
 
 /**
  * @description This function returns single furniture category card component
- * @param {*} category - object
+ * @param {category} object
  * @returns 
  */
 function CategoryCard({ category }) {
   const navigate = useNavigate();
   const navigateToCategoryPage = () => {
-    navigate(`/products/${ category.categoryName.toLowerCase() }`)
+    navigate(`/products/${ category.category.toLowerCase() }`)
   }
 
   return (
     <div className={styles['category-card-container']}>
       <div className={styles['img-container']}>
-        <img src={ category.imageUrl } alt='Category image' />
+        <img src={ category.photo } alt='Category image' />
       </div>
-      <div className={styles['category-name']}>{ category.categoryName }</div>
+      <div className={styles['category-name']}>{ category.category }</div>
       <div className={styles['category-description']}>{ category.description }</div>
       <Button btnText={ AppConstants.HOME_PAGE.SHOP_NOW_BTN_TXT } onClick={ navigateToCategoryPage } />
     </div>

@@ -6,15 +6,20 @@ import PropTypes from 'prop-types';
  * @param {*} btnText - string
  * @returns 
  */
-function Button({ btnText, onClick }) {
+function Button({ btnText, onClick, isCartBtn }) {
     return (
-        <button className={styles.btn} onClick={ onClick }>{ btnText }</button>
+        <button className={ `${styles.btn} ${ isCartBtn && styles['cart-btn']}` } onClick={ onClick }>{ btnText }</button>
     );
+}
+
+Button.defaultProps = {
+    isCartBtn: false
 }
 
 Button.propTypes = {
     btnText: PropTypes.string.isRequired,
-    onClick: PropTypes.func
-  }
+    onClick: PropTypes.func,
+    isCartBtn: PropTypes.bool
+}
 
 export default Button;

@@ -1,7 +1,7 @@
 @import '../../styles/color.module';
 
 .product-card-container {
-    margin: 0.625rem 0 0 1.25rem;
+    // margin: 0.625rem 0 0.75rem 1.25rem;
     width: 23.625rem;
     display: flex;
     flex-direction: column;
@@ -26,6 +26,13 @@
         flex-wrap: wrap;
         justify-content: space-between;
         font-weight: 500;
+
+        .product-name-container {
+            width: 18.75rem;
+            overflow: hidden;
+            white-space:nowrap;
+            text-overflow: ellipsis;
+        }
     }
 
     .product-description-container {
@@ -54,7 +61,7 @@
     }
 
     .horizontal-line {
-        margin-top: 1.83rem;
+        margin-top: 0.9375rem;
         border: solid 0.5px $horizontal-line-color;
     }
 

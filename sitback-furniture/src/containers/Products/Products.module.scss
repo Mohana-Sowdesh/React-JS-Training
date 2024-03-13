@@ -1,0 +1,21 @@
+@import '../../styles/color.module';
+
+.products-with-cart-container {
+    // Subtracting the header height
+    height: calc(100vh - 5.3125rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+
+    .products-container {
+        margin: 35px 35px 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        gap: 42px;
+        overflow-y: auto; 
+    }
+}
