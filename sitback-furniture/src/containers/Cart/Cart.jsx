@@ -10,14 +10,18 @@ import { useState } from 'react';
  * @param {onChange}
  * @returns 
  */
-function Cart({ cartData, onChange }) {
+function Cart({ cartData, onChange, wishlistData, wishlistToCartHandler }) {
     const [activeMenu, setActiveMenu] = useState('cart');
-    let cartItems;
+    let cartItems, wishlistItems;
     let cartTotalValue = 0;
     cartData.map(product => cartTotalValue = cartTotalValue + ((+product.quantity) * (+product.price)));
 
     if(cartData && cartData.length > 0) {
         cartItems = cartData.map(product => <CartProductCard productData={product} key={ product.id } updateCount={onChange}/>);
+    }
+
+    if(wishlistData && wishlistData.length > 0) {
+        wishlistItems = wishlistData.map(product => <CartProductCard productData={product} key={ product.id } isCartProduct={ false } cartToWishlist={  wishlistToCartHandler }/>)
     }
     
     const updateActiveMenu = (changeTo) => {
@@ -31,7 +35,9 @@ function Cart({ cartData, onChange }) {
                 <div className={ `${styles['cart-menu-item']} ${activeMenu==='wishlist' && styles.active}` } onClick= { () => updateActiveMenu('wishlist') } >{ AppConstants.CART.MY_WISHLIST_TXT }</div>
             </div>
             <div className={ styles['cart-main-stage-container']}>
-                { cartItems }
+                {
+                    activeMenu === 'cart' ?  cartItems : wishlistItems 
+                }
             </div>
             {
                 activeMenu === 'cart' ?

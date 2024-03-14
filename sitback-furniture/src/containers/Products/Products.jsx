@@ -9,13 +9,19 @@ import PropTypes from 'prop-types';
  * @returns 
  */
 function Products({ productsData }) {
-    // const lsCartData = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-    const [cartData, setCartData] = useState([]);
+    const lsCartData = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+    const lsWishlistData = localStorage.getItem('wishlist') ? JSON.parse(localStorage.getItem('wishlist')) : [];
+    const [cartData, setCartData] = useState(lsCartData);
+    const [wishlistData, setWishlistData] = useState(lsWishlistData);
 
     useEffect(() => {
         console.log('Re-render happened');
         localStorage.setItem('cart', JSON.stringify(cartData));
     }, [cartData]);
+
+    useEffect(() => {
+        localStorage.setItem('wishlist', JSON.stringify(wishlistData));
+    }, [wishlistData]);
 
     const addProductToCart = (productId, cartItems) => {
         console.log('productId', productId);
@@ -73,16 +79,34 @@ function Products({ productsData }) {
             });
         }
     }
-    console.log('cartData after insertion 1111', cartData);
+    // console.log('cartData after insertion 1111', cartData);
 
-    const productCards = productsData.map(product => <ProductCard key={ product.id } productData ={ product } onChange={ addProductToCart } cartItems={cartData}/>);
+    const addToWishlist = (productId) => {
+        let i = productsData.findIndex(product => product.id === productId);
+        let productData = productsData[i];
+        let productDataForWishlist = { id: productData.id, photo: productData.photo, name: productData.name, price: productData.price };
+        
+        let index = wishlistData.findIndex(product => product.id === productData.id);
+        if(index === -1) {
+            setWishlistData( [...wishlistData, productDataForWishlist] );
+        }
+    }
+
+    const addProductFromWishlistToCart = (productId) => {
+        const updatedArray = wishlistData.filter(product => productId !== product.id);
+        setWishlistData(updatedArray);
+        console.log('addProductFromWishlistToCart', productId);
+        addProductToCart(productId, cartData);
+    }
+
+    const productCards = productsData.map(product => <ProductCard key={ product.id } productData ={ product } cartUpdateHandler={ addProductToCart } cartItems={cartData} wishlistUpdateHandler={ addToWishlist }/>);
 
     return (
         <div className={ styles['products-with-cart-container']}>
             <div className={ styles['products-container'] }>
                 { productCards }
             </div>
-            <Cart onChange={ updateCount } cartData={ cartData }/>
+            <Cart onChange={ updateCount } cartData={ cartData } wishlistData={ wishlistData } wishlistToCartHandler={ addProductFromWishlistToCart }/>
         </div>
     );
 }

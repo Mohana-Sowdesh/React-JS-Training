@@ -9,7 +9,7 @@ import fallbackImg from '../../assets/Fallback image.jpeg';
  * @description Returns a product card component
  * @returns 
  */
-function ProductCard({ productData, onChange , cartItems}) {
+function ProductCard({ productData, cartUpdateHandler , cartItems, wishlistUpdateHandler }) {
     const [imgSrc, setImgSrc] = useState(productData.photo);
     const price = +productData.price;
 
@@ -17,9 +17,13 @@ function ProductCard({ productData, onChange , cartItems}) {
         setImgSrc(fallbackImg);
     }
 
-    const addProductToCart = () => {
-        onChange(productData.id, cartItems);
+    const addProductToCartHandler = () => {
+        cartUpdateHandler(productData.id, cartItems);
     }  
+
+    const addToWishlistHandler = () => {
+        wishlistUpdateHandler(productData.id);
+    }
 
     return (
         <div className={ styles['product-card-container'] }>
@@ -42,8 +46,8 @@ function ProductCard({ productData, onChange , cartItems}) {
             </div>
             <div className={ styles['horizontal-line'] }></div>
             <div className={ styles['buttons-container'] }>
-                <div className={ styles['add-to-wishlist'] }>{ AppConstants.PRODUCT_CARD.ADD_TO_WISHLIST }</div>
-                <Button btnText={AppConstants.PRODUCT_CARD.ADD_TO_CART} onClick={ addProductToCart }/>
+                <div className={ styles['add-to-wishlist'] } onClick = { addToWishlistHandler } >{ AppConstants.PRODUCT_CARD.ADD_TO_WISHLIST }</div>
+                <Button btnText={AppConstants.PRODUCT_CARD.ADD_TO_CART} onClick={ addProductToCartHandler }/>
             </div>
         </div>
     );

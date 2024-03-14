@@ -10,17 +10,21 @@ import { AppConstants } from '../../constants/app-constants';
  * @param {updateCount} function
  * @returns 
  */
-function CartProductCard({ productData, isCartProduct, updateCount }) {
+function CartProductCard({ productData, isCartProduct, updateCount, cartToWishlist }) {
     const price = +productData.price;
 
     const decrementCount = () => {
-        productData.quantity = productData.quantity-1;
+        productData.quantity = productData.quantity - 1;
         updateCount(productData.id, productData.quantity);
     }
 
     const incrementCount = () => {
-        productData.quantity = productData.quantity+1;
+        productData.quantity = productData.quantity + 1;
         updateCount(productData.id, productData.quantity);
+    }
+
+    const cartToWishlistHandler = () => {
+        cartToWishlist(productData.id);
     }
 
     return (
@@ -41,7 +45,7 @@ function CartProductCard({ productData, isCartProduct, updateCount }) {
                 </div>
                 :
                 <div className={ styles['btn-wrapper']}> 
-                    <Button btnText={ AppConstants.PRODUCT_CARD.ADD_TO_CART } isCartBtn={true} />
+                    <Button btnText={ AppConstants.PRODUCT_CARD.ADD_TO_CART } isCartBtn={true} onClick={ cartToWishlistHandler } />
                 </div>
             }
         </div>
