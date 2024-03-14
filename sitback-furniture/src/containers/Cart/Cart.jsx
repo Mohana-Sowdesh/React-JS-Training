@@ -13,10 +13,11 @@ import { useState } from 'react';
 function Cart({ cartData, onChange }) {
     const [activeMenu, setActiveMenu] = useState('cart');
     let cartItems;
+    let cartTotalValue = 0;
+    cartData.map(product => cartTotalValue = cartTotalValue + ((+product.quantity) * (+product.price)));
 
     if(cartData && cartData.length > 0) {
-        // console.log('cartData', cartData);
-        cartItems = cartData.map(product => <CartProductCard productData={product} key={ product.id } updateCount={ (id, qty) => onChange(id, qty) }/>);
+        cartItems = cartData.map(product => <CartProductCard productData={product} key={ product.id } updateCount={onChange}/>);
     }
     
     const updateActiveMenu = (changeTo) => {
@@ -37,7 +38,7 @@ function Cart({ cartData, onChange }) {
                 <div className={ styles['cart-value-container']}>
                     <div>
                         <div className={ styles['total-amt-txt']}>{ AppConstants.CART.TOTAL_AMT_TXT }</div>
-                        <div className={ styles['cart-value']}>₹ 51,490</div>
+                        <div className={ styles['cart-value']}>₹ { cartTotalValue.toLocaleString('en-US') }</div>
                     </div>
                     <Button btnText={ AppConstants.CART.PLACE_ORDER_BTN_TXT } />
                 </div>

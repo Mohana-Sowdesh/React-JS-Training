@@ -9,7 +9,7 @@ import fallbackImg from '../../assets/Fallback image.jpeg';
  * @description Returns a product card component
  * @returns 
  */
-function ProductCard({ productData, onChange }) {
+function ProductCard({ productData, onChange , cartItems}) {
     const [imgSrc, setImgSrc] = useState(productData.photo);
     const price = +productData.price;
 
@@ -18,7 +18,7 @@ function ProductCard({ productData, onChange }) {
     }
 
     const addProductToCart = () => {
-        onChange(productData.id);
+        onChange(productData.id, cartItems);
     }  
 
     return (
