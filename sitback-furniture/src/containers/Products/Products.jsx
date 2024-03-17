@@ -3,6 +3,7 @@ import Cart from '../Cart/Cart';
 import styles from '../Products/Products.module.scss';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { AppConstants } from '../../constants/app-constants';
 
 /**
  * @description Returns products container with all category product cards
@@ -15,7 +16,6 @@ function Products({ productsData }) {
     const [wishlistData, setWishlistData] = useState(lsWishlistData);
 
     useEffect(() => {
-        console.log('Re-render happened');
         localStorage.setItem('cart', JSON.stringify(cartData));
     }, [cartData]);
 
@@ -23,47 +23,21 @@ function Products({ productsData }) {
         localStorage.setItem('wishlist', JSON.stringify(wishlistData));
     }, [wishlistData]);
 
-    const addProductToCart = (productId, cartItems) => {
-        console.log('productId', productId);
-
-        let i = productsData.findIndex(product => product.id === productId);
-        let productData = productsData[i];
-        let productDataForCart = { id: productData.id, photo: productData.photo, name: productData.name, price: productData.price, description: productData.description, quantity: 1 };
-        // if(cartData.length === 0) {
-        //     setCartData([productDataForCart]);
-        //     console.log('cartData after insertion', cartData);
-        //     // localStorage.setItem('cart', JSON.stringify([productDataForCart]));
-        // }
-        // else {
-            let index = cartData.findIndex(product => product.id === productData.id);
-            if(index === -1) {
-                setCartData(prevState => {
-                    
-                    return [...cartItems, productDataForCart];
-                });
-                console.log('cartData after insertion 1111', cartData);
-            }
-            else {
-                // cartData[index].quantity = cartData[index].quantity + 1;
-                const products = [...cartItems];
-                let modifiedproduct = products.find(product => product.id === productData.id);
-                let remainingProducts = products.filter(product => product.id !== productData.id);
-                // console.log(prevState[index]);
-                // console.log("before",prevState[index].quantity);
-                modifiedproduct.quantity = modifiedproduct.quantity+ 1;
-                setCartData(prevState => {
-                    console.log("called addproduct");
-                    console.log("cartitems",cartItems);
-                   
-                    // console.log("after",prevState[index].quantity);                    
-                    // console.log("prevState on update", prevState);
-                    return [...remainingProducts, modifiedproduct];
-                });
-                console.log('cartData after insertion', cartData);
-            }
-            // localStorage.setItem('cart', JSON.stringify(cartData));
-        // }
-        console.log('cartData',cartData);
+    const addProductToCart = (productId) => {
+        const i = productsData.findIndex(product => product.id === productId);
+        const productData = productsData[i];
+        const productDataForCart = { id: productData.id, photo: productData.photo, name: productData.name, price: productData.price, description: productData.description, quantity: 1 };
+        const index = cartData.findIndex(product => product.id === productData.id);
+        if(index === -1) {
+            setCartData([...cartData, productDataForCart]);
+        }
+        else {
+            const products = [...cartData];
+            let modifiedproduct = products.find(product => product.id === productData.id);
+            const remainingProducts = products.filter(product => product.id !== productData.id);
+            modifiedproduct.quantity = modifiedproduct.quantity + 1;
+            setCartData([...remainingProducts, modifiedproduct]);
+        }
     }
 
     const updateCount = (productId, newQty) => {
@@ -73,42 +47,64 @@ function Products({ productsData }) {
         }
         else {
             setCartData((prevCartData)=>{
-                let i = prevCartData.findIndex(product => product.id === productId);
+                const i = prevCartData.findIndex(product => product.id === productId);
                 prevCartData[i].quantity = newQty;
                 return [...prevCartData]
             });
         }
     }
-    // console.log('cartData after insertion 1111', cartData);
 
     const addToWishlist = (productId) => {
-        let i = productsData.findIndex(product => product.id === productId);
-        let productData = productsData[i];
-        let productDataForWishlist = { id: productData.id, photo: productData.photo, name: productData.name, price: productData.price };
-        
-        let index = wishlistData.findIndex(product => product.id === productData.id);
+        const i = productsData.findIndex(product => product.id === productId);
+        const productData = productsData[i];
+        const productDataForWishlist = { id: productData.id, photo: productData.photo, name: productData.name, price: productData.price, description: productData.description };
+        const index = wishlistData.findIndex(product => product.id === productData.id);
         if(index === -1) {
             setWishlistData( [...wishlistData, productDataForWishlist] );
         }
     }
 
     const addProductFromWishlistToCart = (productId) => {
+        const i = wishlistData.findIndex(product => product.id === productId);
+        let productDataForCart = wishlistData[i];
         const updatedArray = wishlistData.filter(product => productId !== product.id);
         setWishlistData(updatedArray);
-        console.log('addProductFromWishlistToCart', productId);
-        addProductToCart(productId, cartData);
+        
+        const index = cartData.findIndex(product => product.id === productDataForCart.id);
+        if(index === -1) {
+            productDataForCart.quantity = 1;
+            setCartData([...cartData, productDataForCart]);
+        }
+        else {
+            const products = [...cartData];
+            let modifiedproduct = products.find(product => product.id === productDataForCart.id);
+            const remainingProducts = products.filter(product => product.id !== productDataForCart.id);
+            modifiedproduct.quantity = modifiedproduct.quantity + 1;
+            setCartData([...remainingProducts, modifiedproduct]);
+        }
     }
 
-    const productCards = productsData.map(product => <ProductCard key={ product.id } productData ={ product } cartUpdateHandler={ addProductToCart } cartItems={cartData} wishlistUpdateHandler={ addToWishlist }/>);
-
+    const productCards = productsData.map(product => <ProductCard key={ product.id } productData ={ product } cartUpdateHandler={ addProductToCart } wishlistUpdateHandler={ addToWishlist } isOrderCard={false}/>);
+    
     return (
         <div className={ styles['products-with-cart-container']}>
-            <div className={ styles['products-container'] }>
-                { productCards }
-            </div>
-            <Cart onChange={ updateCount } cartData={ cartData } wishlistData={ wishlistData } wishlistToCartHandler={ addProductFromWishlistToCart }/>
+            {
+                productCards.length > 0 ?
+                <div className={ styles['products-container'] }>
+                    { productCards }
+                </div> :
+                <div className={ styles['loading-txt']}>{ AppConstants.LOADING_TXT }</div>
+            }
+            {
+                (cartData.length > 0 || wishlistData.length > 0) &&
+                <Cart onChange={ updateCount } cartData={ cartData } wishlistData={ wishlistData } wishlistToCartHandler={ addProductFromWishlistToCart }/>
+            }
         </div>
     );
+}
+
+Products.propTypes = {
+    productsData: PropTypes.array
 }
 
 export default Products;

@@ -21,9 +21,13 @@ function Categories() {
             <div className={styles['categories-container']}>
                 <div className={styles['headline']}>{ AppConstants.HOME_PAGE.TAGLINE }</div>
                 <div className={styles['sub-headline']}>{ AppConstants.HOME_PAGE.CATCH_PHRASE }</div>
-                <div className={styles['category-cards-container']}>
-                    { categoryCards }
-                </div>
+                {
+                    categoryCards.length > 0 ?
+                    <div className={styles['category-cards-container']}>
+                        { categoryCards }
+                    </div> :
+                    <div className={ styles['loading-txt']}>{ AppConstants.LOADING_TXT }</div>
+                }
             </div>
             <footer className={styles.footer}>{ AppConstants.HOME_PAGE.COPYRIGHTS_TXT } { new Date().getFullYear() }</footer>
         </>

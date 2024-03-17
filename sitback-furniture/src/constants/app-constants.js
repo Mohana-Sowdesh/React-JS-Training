@@ -27,7 +27,8 @@ export const AppConstants = {
     ADD_TO_CART: 'ADD TO CART',
     ADD_TO_WISHLIST: 'ADD TO WISHLIST',
     FALLBACK_IMG_URL: '../assets/Fallback image.jpeg',
-    GUARANTEE_TXT: 'GUARANTEE'
+    GUARANTEE_TXT: 'GUARANTEE',
+    QTY_TXT: 'Quantity : '
   },
   API_URLS: {
     CATEGORIES_URL: 'https://jsonmockserver.vercel.app/api/shopping/furniture/categories',
@@ -37,6 +38,13 @@ export const AppConstants = {
     MY_CART_TXT: 'MY CART',
     MY_WISHLIST_TXT: 'MY WISHLIST',
     PLACE_ORDER_BTN_TXT: 'PLACE ORDER',
-    TOTAL_AMT_TXT: 'TOTAL AMOUNT'
-  }
+    TOTAL_AMT_TXT: 'TOTAL AMOUNT',
+    CART_EMPTY_MSG: 'Your cart is waiting to be filled with awesome stuff!',
+    WISHLIST_EMPTY_MSG: "Let's build your dream collection here!"
+  },
+  ORDER_PAGE: {
+    ORDER_CONFIRMATION_TXT: 'Order Confirmation',
+    THANKYOU_MSG: 'Thank you for shopping with us. The items will be delivered within 7 days.'
+  },
+  LOADING_TXT: 'Loading...'
 };

@@ -8,21 +8,15 @@
     cursor: pointer;
     text-decoration: none;
 
-    a, a:visited, a:hover {
+    a, a:active {
+        padding: 1.9375rem 0 1.4375rem;
+        border-bottom: 0.5rem solid transparent;
         text-decoration: none;
         color: inherit;
     }
 
-    a:active {
-        margin-top: 1.5rem;
-        height: calc(100% - 1.5rem);
-        border-bottom: 0.25rem solid $black;
-        font-weight: 600;
+    .active {
+        border-bottom: 0.5rem solid $black;
     }
 }
 
-.active {
-    height: calc(100% - 0.25rem);
-    border-bottom: 0.25rem solid $black;
-    font-weight: 600;
-}

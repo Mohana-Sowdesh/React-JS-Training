@@ -9,16 +9,9 @@ import { useNavigate } from 'react-router-dom';
  * @description This function returns Header component
  * @returns 
  */
-function Header({ selectedCategory }) {
+function Header() {
     const navigate = useNavigate();
-    const menuList = AppConstants.HEADER.MENU_LIST.map((menu, index) => {
-        if(!selectedCategory) {
-            return <MenuItem key={index} menuItem={ menu.name } path={ menu.path } />
-        }
-        else {
-            return <MenuItem key={index} menuItem={ menu.name } path={ menu.path }  isActive={ selectedCategory===menu.name ? true : false } />
-        }
-    });
+    const menuList = AppConstants.HEADER.MENU_LIST.map((menu, index) => <MenuItem key={index} menuItem={ menu.name } path={ menu.path } />);
 
     const navigateToHomePage = () => {
         navigate('/');

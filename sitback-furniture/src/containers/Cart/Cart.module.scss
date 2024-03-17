@@ -1,7 +1,6 @@
 @import '../../styles/color.module';
 
 .cart-container {
-    // display: none;
     min-width: 25.625rem;
     display: flex;
     flex-direction: column;
@@ -36,6 +35,11 @@
         gap: 7.1875rem;
         flex-grow: 1;
         overflow-y: scroll;
+
+        .empty-msg {
+            margin: auto;
+            text-align: center;
+        }
     }
 
     .cart-value-container {

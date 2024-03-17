@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getProductsData } from "../../services/Data";
 import Products from "../../containers/Products/Products";
+
 /**
  * @description Page to view all products present for the category
  * @returns 
@@ -17,7 +18,7 @@ function CategoryProducts() {
 
     return (
         <>
-            <Header selectedCategory={ category } />
+            <Header />
             <Products productsData ={ productsData }/>
         </>
     );

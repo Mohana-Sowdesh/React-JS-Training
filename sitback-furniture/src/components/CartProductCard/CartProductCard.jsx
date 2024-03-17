@@ -2,16 +2,24 @@ import styles from '../CartProductCard/CartProductCard.module.scss';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import { AppConstants } from '../../constants/app-constants';
+import { numberToPriceConverter } from '../../helpers/numberToPriceConverter';
+import { useState } from 'react';
+import fallbackImg from '../../assets/Fallback image.jpeg';
 
 /**
  * @description Returns product-card component displayed in cart
  * @param {productData} object
  * @param {isCartProduct} bool
  * @param {updateCount} function
+ * @param {cartToWishlist} function
  * @returns 
  */
 function CartProductCard({ productData, isCartProduct, updateCount, cartToWishlist }) {
-    const price = +productData.price;
+    const [imgSrc, setImgSrc] = useState(productData.photo);
+
+    const handleError = () => {
+        setImgSrc(fallbackImg);
+    }
 
     const decrementCount = () => {
         productData.quantity = productData.quantity - 1;
@@ -30,11 +38,11 @@ function CartProductCard({ productData, isCartProduct, updateCount, cartToWishli
     return (
         <div className={ styles['cart-product-container'] }>
             <div className={ styles['img-container'] }>
-                <img src={ productData.photo } alt='product image' />
+                <img src={ imgSrc } alt='product image' onError={ handleError } />
             </div>
             <div className={ styles['product-details-container'] }>
                 <div className={ styles['product-name'] }>{ productData.name }</div>
-                <div className={ styles['product-price'] }>₹ { price.toLocaleString('en-US') }</div>
+                <div className={ styles['product-price'] }>₹ { numberToPriceConverter(productData.price) }</div>
             </div>
             {
                 isCartProduct ?
@@ -51,7 +59,7 @@ function CartProductCard({ productData, isCartProduct, updateCount, cartToWishli
         </div>
     );
 }
-/***** Ti be deleted **** */
+
 CartProductCard.defaultProps = {
     isCartProduct: true
 }
@@ -59,7 +67,8 @@ CartProductCard.defaultProps = {
 CartProductCard.propTypes = {
     productData: PropTypes.object.isRequired,
     isCartProduct: PropTypes.bool.isRequired,
-    updateCount: PropTypes.func
+    updateCount: PropTypes.func,
+    cartToWishlist: PropTypes.func
 }
 
 export default CartProductCard;
