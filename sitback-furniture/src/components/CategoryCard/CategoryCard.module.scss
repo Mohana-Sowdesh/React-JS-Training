@@ -1,0 +1,31 @@
+@import '../../styles//color.module';
+
+.category-card-container {
+    display: flex;
+    flex-direction: column;
+
+    .img-container {
+        width: 28.3125rem;
+        height: 38.125rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .category-name {
+        margin-top: 0.9375rem;
+        font-size: 1.875rem;
+        font-weight: 500;
+    }
+
+    .category-description {
+        margin-bottom: 0.8125rem;
+        margin-top: 0.9375rem;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        color: $description-txt-color;
+    }
+}

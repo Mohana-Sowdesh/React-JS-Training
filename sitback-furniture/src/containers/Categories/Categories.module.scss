@@ -1,0 +1,35 @@
+@import '../../styles/color.module';
+
+.categories-container {
+    margin: 3.75rem 9.6875rem 3.125rem 9.6875rem;
+
+    .headline {
+        font-size: 3.25rem;
+        font-weight: 400;
+    }
+
+    .sub-headline {
+        margin-top: 0.3125rem;
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .category-cards-container {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1.875rem;
+    }
+
+    .loading-txt {
+        margin: 2.5rem auto;
+        text-align: center;
+    }
+}
+
+.footer {
+    padding: 0.75rem 9.6875rem;
+    font-size: 1.0625rem;
+    background-color: $footer-bg-color;
+}
