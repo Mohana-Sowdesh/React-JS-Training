@@ -7,6 +7,7 @@ import { AppConstants } from '../../constants/app-constants';
 
 /**
  * @description Returns products container with all category product cards
+ * @param {*} productsData - array 
  * @returns 
  */
 function Products({ productsData }) {

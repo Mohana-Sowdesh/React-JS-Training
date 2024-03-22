@@ -9,10 +9,10 @@ import PropTypes from 'prop-types';
 
 /**
  * @description Returns cart container
- * @param {cartData} array 
- * @param {onChange} function
- * @param {wishlistData} array
- * @param {wishlistToCartHandler} function
+ * @param {*} cartData - array 
+ * @param {*} onChange - function
+ * @param {*} wishlistData - array
+ * @param {*} wishlistToCartHandler - function
  * @returns 
  */
 function Cart({ cartData, onChange, wishlistData, wishlistToCartHandler }) {

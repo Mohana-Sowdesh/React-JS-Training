@@ -13,6 +13,7 @@ function CategoryProducts() {
     const [productsData, setProductsData] = useState([]);
 
     useEffect(() => {
+        setProductsData([]);
         getProductsData(category).then(data => setProductsData(data));
     }, [category]);
 

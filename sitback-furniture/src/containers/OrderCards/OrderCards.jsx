@@ -1,17 +1,19 @@
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { AppConstants } from "../../constants/app-constants";
 import styles from '../OrderCards/OrderCards.module.scss';
+import PropTypes from 'prop-types';
 
 /**
  * @description Returns a container containing all order card components
+ * @param {*} cartProducts - array
  * @returns 
  */
-function OrderCards() {
-    const cartProducts = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+function OrderCards({ cartProducts }) {
     let orderCards;
 
     if(cartProducts.length > 0) {
         orderCards = cartProducts.map(product => <ProductCard key={product.id} productData={product} isOrderCard={true}/>);
+        localStorage.setItem('cart', JSON.stringify([]));
     }
 
     return (
@@ -23,6 +25,10 @@ function OrderCards() {
             </div>
         </div>
     );
+}
+
+OrderCards.propTypes = {
+    cartProducts: PropTypes.array.isRequired
 }
 
 export default OrderCards;

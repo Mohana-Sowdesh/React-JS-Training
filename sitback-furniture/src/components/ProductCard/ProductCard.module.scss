@@ -24,7 +24,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        font-weight: 600;
+        font-weight: 500;
 
         .product-name-container {
             width: 18.75rem;
@@ -60,7 +60,7 @@
         }
 
         .guarantee-text {
-            font-size: 0.9375rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: $guarantee-icon-color;
         }

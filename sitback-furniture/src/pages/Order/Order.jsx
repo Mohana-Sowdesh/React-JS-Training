@@ -7,10 +7,12 @@ import OrderCards from "../../containers/OrderCards/OrderCards";
  * @returns 
  */
 function Order() {
+    const cartProducts = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+
     return(
         <>
             <Header />
-            <OrderCards />
+            <OrderCards cartProducts={cartProducts}/>
             <Categories />
         </>
     );
